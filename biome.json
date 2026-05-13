@@ -1,68 +1,93 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.4.15/schema.json",
+
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
+
   "files": {
     "includes": [
       "**",
-      "!!**/dist",
-      "!!**/node_modules",
-      "!!**/coverage",
+      "!!dist",
+      "!!node_modules",
+      "!!coverage",
+      "!!.scannerwork",
+      "!!.husky",
+      "!!.github",
+      "!!*.log",
       "!!**/*.spec.js",
       "!!**/*.e2e-spec.js"
     ]
   },
+
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
     "lineWidth": 100,
-    "lineEnding": "lf"
+    "lineEnding": "lf",
+    "formatWithErrors": false,
+    "attributePosition": "auto"
   },
+
   "linter": {
     "enabled": true,
+
     "rules": {
       "recommended": true,
-      "suspicious": {
-        "noExplicitAny": "warn",
-        "noConfusingVoidType": "warn"
-      },
+
       "style": {
-        "noNonNullAssertion": "warn",
-        "useImportType": "error",
-        "noParameterAssign": "warn"
+        "useConst": "error",
+        "useTemplate": "warn",
+        "useBlockStatements": "error",
+        "noParameterAssign": "error"
       },
+
+      "suspicious": {
+        "noConsole": "warn",
+        "noDoubleEquals": "error",
+        "noExplicitAny": "warn"
+      },
+
       "correctness": {
-        "noUnusedVariables": "warn",
-        "noUnusedImports": "warn",
-        "noUnusedPrivateClassMembers": "warn"
+        "noUnusedVariables": "warn"
       },
+
       "complexity": {
-        "noExcessiveCognitiveComplexity": {
-          "level": "warn",
-          "options": { "maxAllowedComplexity": 15 }
-        }
+        "noExcessiveCognitiveComplexity": "warn",
+        "useOptionalChain": "warn",
+        "useSimplifiedLogicExpression": "warn"
       },
-      "nursery": {}
+
+      "performance": {
+        "noDelete": "warn"
+      }
     }
   },
+
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "trailingCommas": "all",
       "semicolons": "always",
+      "trailingCommas": "all",
+      "arrowParentheses": "always",
       "bracketSpacing": true,
-      "arrowParentheses": "always"
-    },
-    "parser": {
-      "unsafeParameterDecoratorsEnabled": true
+      "bracketSameLine": false,
+      "quoteProperties": "asNeeded"
     }
   },
+
+  "json": {
+    "formatter": {
+      "enabled": true
+    }
+  },
+
   "assist": {
     "enabled": true,
+
     "actions": {
       "source": {
         "organizeImports": "on"
