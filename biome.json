@@ -8,6 +8,7 @@
   },
 
   "files": {
+    "ignoreUnknown": true,
     "includes": [
       "**",
       "!!dist",
@@ -42,7 +43,10 @@
         "useConst": "error",
         "useTemplate": "warn",
         "useBlockStatements": "error",
-        "noParameterAssign": "error"
+        "noParameterAssign": "error",
+        "useNodejsImportProtocol": "off",
+        "noProcessEnv": "off",
+        "useImportType": "off"
       },
 
       "suspicious": {
@@ -90,12 +94,6 @@
   },
 
   "assist": {
-    "enabled": true,
-
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
+    "enabled": false
   }
 }
