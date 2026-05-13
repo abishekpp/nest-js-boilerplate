@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateExampleDto } from './dto/create-example.dto';
-import { UpdateExampleDto } from './dto/update-example.dto';
+import type { CreateExampleDto } from './dto/create-example.dto';
+import type { UpdateExampleDto } from './dto/update-example.dto';
 
 @Injectable()
 export class ExampleService {
-  create(createExampleDto: CreateExampleDto) {
+  create(_createExampleDto: CreateExampleDto) {
     return 'This action adds a new example';
   }
 
@@ -16,7 +16,7 @@ export class ExampleService {
     return `This action returns a #${id} example`;
   }
 
-  update(id: number, updateExampleDto: UpdateExampleDto) {
+  update(id: number, _updateExampleDto: UpdateExampleDto) {
     return `This action updates a #${id} example`;
   }
 
